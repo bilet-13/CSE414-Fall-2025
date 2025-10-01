@@ -1,0 +1,57 @@
+CREATE TABLE Edges (Source int, Destination int); 
+
+INSERT INTO Edges VALUES (10, 5), (6, 25), (1, 3), (4, 4);
+
+SELECT * FROM Edges;
+
+SELECT source FROM Edges;
+
+SELECT * FROM Edges as E WHERE E.source > E.destination ;
+
+INSERT INTO Edges VALUES (-1, 2000);
+The int is the signed integer type, so it can handle negative values.
+
+CREATE TABLE MyRestaurants (
+  Name varchar(30),
+  FoodType varchar(30),
+  Distance int,
+  LastVisited varchar(30),
+  Liked int
+); 
+
+INSERT INTO MyRestaurants VALUES ("McDonald", "FastFood", 13, "2023-01-01", 1);
+INSERT INTO MyRestaurants VALUES ("KFC","FastFood", 40, "2025-01-08", 0);
+INSERT INTO MyRestaurants VALUES ("FriedKing", "BBQ", 20, "2025-07-01", NULL);
+INSERT INTO MyRestaurants VALUES ("AllYouEat", "buffet", 78, "2022-10-30", 1);
+INSERT INTO MyRestaurants VALUES ("Noodle", "Ramen", 10, "2024-09-14", 1);
+
+.headers on
+.mode csv
+SELECT * FROM MyRestaurants;
+
+.mode list
+SELECT * FROM MyRestaurants;
+
+.mode column
+.width 15 15 15 15 15
+SELECT * FROM MyRestaurants;
+
+.headers off
+
+.mode csv
+SELECT * FROM MyRestaurants;
+
+.mode list
+SELECT * FROM MyRestaurants;
+
+.mode column
+.width 15 15 15 15 15
+SELECT * FROM MyRestaurants;
+
+SELECT name, distance FROM MyRestaurants WHERE distance <= 20 order by name;
+
+SELECT * FROM MyRestaurants WHERE liked == 1 AND date('now') > date(LastVisited, '+3 months');
+
+SELECT * FROM MyRestaurants WHERE distance <= 10;
+
+
