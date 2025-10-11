@@ -1,21 +1,21 @@
 SELECT
-  C.cname                                AS carrier_name,
-  F1.op_carrier_flight_num               AS f1_flight_num,
-  F1.duration_mins                       AS f1_duration_mins,
-  F1.dest_city                           AS intermediate_city,
-  F2.op_carrier_flight_num               AS f2_flight_num,
-  F2.duration_mins                       AS f2_duration_mins,
+  C.cname AS carrier_name,
+  F1.op_carrier_flight_num AS f1_flight_num,
+  F1.duration_mins AS f1_duration_mins,
+  F1.dest_city AS intermediate_city,
+  F2.op_carrier_flight_num AS f2_flight_num,
+  F2.duration_mins AS f2_duration_mins,
   (F1.duration_mins + F2.duration_mins)  AS total_duration_mins
 
 FROM Flights AS F1
-  JOIN Flights AS F2 ON 
-      F1.cid = F2.cid AND 
-      F1.year = F2.year AND 
-      F1.month = F2.month AND 
-      F1.day_of_month = F2.day_of_month AND 
-      F1.dest = F2.origin  
-  JOIN Carriers AS C ON 
-      C.cid = F1.cid
+JOIN Flights AS F2 ON 
+    F1.cid = F2.cid AND 
+    F1.year = F2.year AND 
+    F1.month = F2.month AND 
+    F1.day_of_month = F2.day_of_month AND 
+    F1.dest = F2.origin  
+JOIN Carriers AS C ON 
+    C.cid = F1.cid
 
 WHERE
   F1.cancelled = 0 AND 
