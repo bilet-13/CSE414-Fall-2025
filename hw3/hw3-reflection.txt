@@ -1,0 +1,11 @@
+Q: How many hours did it take you to finish this assignment?
+A: It takes me about 6 hours.
+
+Q: How many of those hours did you feel were valuable and/or contributed to your learning?
+A: 5 hours.
+
+Q: Did you collaborate with others on this assignment? If so, please write how many students you collaborated with, and their UW NetIDs.
+A: NO.
+
+Q: Is there anything you liked/disliked about this assignment? If not, please write N/A.
+A: I liked that the questions helped me understand the benefits of using the WITH statement. Question 7 allowed me to transform a correlated SQL command into a decorrelated one. It was not very difficult compared to previous problems, but it helped me clearly see the difference between correlated and decorrelated queries. The decorrelated SQL command runs much faster than the correlated one.
