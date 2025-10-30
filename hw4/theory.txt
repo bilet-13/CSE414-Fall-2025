@@ -1,0 +1,29 @@
+a
+1 For R(A, B, C, D, E) D -> B is a bad FD.
+  so decompose R into R1(D, B) and R2(A, C, D, E)
+2 R1 is BCNF form. For R2(A, C, D, E) CE -> A is a bad FD.
+  so decompose R2 into R3( A, C, E) and R4(C, D, E)
+3 R(A, B, C, D, E) can be decomposed into R1(D, B), R3(A, C, E), and R4(C, D, E) which are all in BCNF.
+
+b
+1 For S(A, B, C, D, E)  A -> E is a bad FD.
+  so decompose S into S1(A, E) and S2(A, B, C, D)
+2 S1 is BCNF form. For S2(A, B, C, D) BC -> A is a bad FD.
+so decompose S2 into S3(A, B, C) and S4(B, C, D)
+3 S(A, B, C, D, E) can be decomposed into S1(A, E), S3(A, B, C), and S4(B, C, D) which are all in BCNF.
+
+C
+{}
+
+d
+A -> BCD
+B -> ACD
+C -> ABD
+D -> ABC
+
+e
+B -> C
+C -> B
+A -> B
+A -> D
+D -> A
