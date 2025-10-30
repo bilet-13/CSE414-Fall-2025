@@ -63,3 +63,13 @@ CREATE TABLE Operates (
   FOREIGN KEY (driverID)     REFERENCES ProfessionalDriver(driverID) ,
   FOREIGN KEY (licensePlate) REFERENCES Truck(licensePlate)          
 );
+
+/*
+b.
+The relationship "Insures" is represented by the foreign key InsuranceCo_name in the Vehicle table. We can find the insurance company by join vehicles with insurance companies on that attribute.
+c.
+The representation of drives is by the Drives table, which links NonProfessionalDriver and Car through their driverID and licensePlate primary keys.
+The representation of operates is by the Operates table, which links ProfessionalDriver and Truck through driverID and licensePlate primary keys.
+
+
+*/
